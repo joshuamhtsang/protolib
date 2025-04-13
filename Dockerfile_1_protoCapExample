@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     g++ \
     libxml2-dev \
     python3-dev \
-    net-tools 
+    net-tools \
+    netcat-traditional \
+    iputils-ping
 
 
 WORKDIR /app
