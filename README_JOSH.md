@@ -103,3 +103,27 @@ When protoCapExample is both listening and forwarding on eth0:
 stats: rcvd>0 sent>0 serr>0
 stats: rcvd>2 sent>1 serr>0 (+2 to rcvd and +1 to sent!)
 ~~~
+
+
+## <unistd.h>, <fcntl.h> and <sys/socket.h>
+
+I can see these POSIX header files are featured in some of the cpp source files.  I believe some familiarity with these POSIX API's are needed to grasp the inner workings of protolib.
+
+~~~
+$ grep unistd.h src/common/*
+src/common/pcapCap.cpp:#include <unistd.h>  // for write()
+src/common/protoAddress.cpp:#include <unistd.h>     // for gethostname()
+src/common/protoChannel.cpp:#include <unistd.h>
+src/common/protoDispatcher.cpp:#include <unistd.h>
+src/common/protoEvent.cpp:#include <unistd.h>
+src/common/protoFile.cpp:#include <unistd.h>
+src/common/protoPipe.cpp:#include <unistd.h>  // for unlink(), close()
+src/common/protoSocket.cpp:#include <unistd.h>
+src/common/protoZMQ.cpp:#include <unistd.h>  // for getpid()
+~~~
+
+A good C language guide on these is Beej's guide:
+
+https://beej.us/guide/bgnet/html/split-wide/
+
+A quick skim through the contents looks promising, covering lots of the system calls needed to do Socket API programming.
