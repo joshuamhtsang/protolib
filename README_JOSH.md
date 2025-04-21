@@ -49,6 +49,7 @@ An illustrative test of the `protoCapExample` protoApp.  When run, this app list
 
 The setup is shown in the diagram below.  Container `protoCapExample-a`  (container A) will run a netcat server and the `protoCapExample` on a combination of listen and forward modes.  Container `protoCapExample-b` (Container B) will start a netcat client.
 
+~~~
 ┌─────────────────────────────────────────────────┐
 │                   host                          │
 │               (172.17.0.1)                      │
@@ -70,6 +71,7 @@ The setup is shown in the diagram below.  Container `protoCapExample-a`  (contai
 │                                                 │
 │   $ nc 172.17.0.2 8888                          │
 └─────────────────────────────────────────────────┘
+~~~
 
 Diagram created with: https://asciiflow.com/#/
 
